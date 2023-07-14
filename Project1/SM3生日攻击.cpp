@@ -367,6 +367,10 @@ void birthday_attack() {
 }
 
 int main() {
+	clock_t start, end;
+	start = clock();
 	birthday_attack();
+	end = clock();
+	cout << "消耗时间：" << (float)(end - start) * 1000 / CLOCKS_PER_SEC << "ms";
 	return 0;
 }
