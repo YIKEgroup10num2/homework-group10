@@ -212,7 +212,7 @@ MerkleTree* Creat_Merkle_Tree(MerkleTree* mt, int* arr, int nums)
 
 int main(void)
 {
-	int array[] = { 11, 22, 33 ,44 ,55 ,66, 77, 88, 99, 1010, 1111, 1212 };
+	int array[] = {4, 13, 27 ,36 ,47 ,59, 61, 74, 82, 101, 131, 356};
 	MerkleTree* mt = NULL;
 
 	// 根据数组动态创建 Merkle Tree 
