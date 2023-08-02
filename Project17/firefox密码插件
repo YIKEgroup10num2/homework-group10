@@ -1,0 +1,127 @@
+<!-- Passwords -->
+<groupbox id="passwordsGroup" orient="vertical" data-category="panePrivacy" data-subcategory="logins" hidden="true">
+  <label><html:h2 data-l10n-id="pane-privacy-logins-and-passwords-header" data-l10n-attrs="searchkeywords"/></label>
+
+  <vbox id="passwordSettings">
+    <hbox id="passwordManagerExtensionContent"
+          class="extension-controlled"
+          align="center"
+          hidden="true">
+          <description control="disablePasswordManagerExtension"
+                       flex="1"/>
+          <button id="disablePasswordManagerExtension"
+                  class="extension-controlled-button accessory-button"
+                  data-l10n-id="disable-extension"
+                  hidden="true" />
+    </hbox>
+    <hbox>
+      <vbox flex="1">
+        <hbox>
+          <checkbox id="savePasswords"
+                    data-l10n-id="forms-ask-to-save-logins"
+                    preference="signon.rememberSignons"
+                    flex="1" />
+        </hbox>
+        <hbox class="indent" flex="1">
+          <checkbox id="passwordAutofillCheckbox"
+                    data-l10n-id="forms-fill-logins-and-passwords"
+                    search-l10n-id="forms-fill-logins-and-passwords.label"
+                    preference="signon.autofillForms"
+                    flex="1" />
+        </hbox>
+        <hbox class="indent" id="generatePasswordsBox" flex="1">
+          <checkbox id="generatePasswords"
+                    data-l10n-id="forms-generate-passwords"
+                    search-l10n-ids="forms-generate-passwords.label"
+                    preference="signon.generation.enabled"
+                    flex="1" />
+        </hbox>
+      </vbox>
+      <vbox align="end">
+        <button id="passwordExceptions"
+                is="highlightable-button"
+                class="accessory-button"
+                data-l10n-id="forms-exceptions"
+                preference="pref.privacy.disable_button.view_passwords_exceptions"
+                search-l10n-ids="
+                  permissions-address,
+                  permissions-exceptions-saved-logins-window2.title,
+                  permissions-exceptions-saved-logins-desc,
+                "/>
+        <button id="showPasswords"
+                is="highlightable-button"
+                class="accessory-button"
+                data-l10n-id="forms-saved-logins"
+                search-l10n-ids="forms-saved-logins.label"
+                preference="pref.privacy.disable_button.view_passwords"/>
+      </vbox>
+    </hbox>
+    <hbox class="indent" id="relayIntegrationBox" flex="1" align="center">
+      <checkbox id="relayIntegration"
+                class="tail-with-learn-more"
+                data-l10n-id="preferences-relay-integration-checkbox"
+                search-l10n-ids="preferences-relay-integration-checkbox.label" />
+      <html:a id="relayIntegrationLearnMoreLink" class="learnMore"
+             data-l10n-id="relay-integration-learn-more-link"/>
+    </hbox>
+    <hbox class="indent" id="breachAlertsBox" flex="1" align="center">
+      <checkbox id="breachAlerts"
+                class="tail-with-learn-more"
+                data-l10n-id="forms-breach-alerts"
+                search-l10n-ids="breach-alerts.label"
+                preference="signon.management.page.breach-alerts.enabled"/>
+      <html:a is="moz-support-link"
+              id="breachAlertsLearnMoreLink"
+              data-l10n-id="forms-breach-alerts-learn-more-link"
+              support-page="lockwise-alerts"
+      />
+    </hbox>
+  </vbox>
+  <vbox>
+    <hbox id="masterPasswordRow" align="center">
+      <checkbox id="useMasterPassword"
+                data-l10n-id="forms-primary-pw-use"
+                class="tail-with-learn-more"/>
+      <html:a is="moz-support-link"
+              id="primaryPasswordLearnMoreLink"
+              data-l10n-id="forms-primary-pw-learn-more-link"
+              support-page="primary-password-stored-logins"
+      />
+      <spacer flex="1"/>
+      <button id="changeMasterPassword"
+              is="highlightable-button"
+              class="accessory-button"
+              search-l10n-ids="forms-master-pw-change.label"
+              data-l10n-id="forms-primary-pw-change"/>
+    </hbox>
+    <description class="indent tip-caption"
+                 data-l10n-id="forms-primary-pw-former-name"
+                 data-l10n-attrs="hidden"
+                 flex="1"/>
+    <hbox id="windows-sso" align="center">
+      <checkbox data-l10n-id="forms-windows-sso"
+                preference="network.http.windows-sso.enabled"
+                class="tail-with-learn-more"/>
+      <html:a is="moz-support-link"
+              id="windowsSSOLearnMoreLink"
+              data-l10n-id="forms-windows-sso-learn-more-link"
+              support-page="windows-sso"
+      />
+    </hbox>
+    <description id="windows-sso-caption" class="indent tip-caption"
+           data-l10n-id="forms-windows-sso-desc"/>
+
+  </vbox>
+  <!--
+    Those two strings are meant to be invisible and will be used exclusively to provide
+    localization for an alert window.
+  -->
+  <label id="fips-title" hidden="true" data-l10n-id="forms-primary-pw-fips-title"></label>
+  <label id="fips-desc" hidden="true" data-l10n-id="forms-master-pw-fips-desc"></label>
+</groupbox>
+
+<!-- The form autofill section is inserted in to this box
+     after the form autofill extension has initialized. -->
+<groupbox id="formAutofillGroupBox"
+          data-category="panePrivacy"
+          data-subcategory="form-autofill" hidden="true"></groupbox>
